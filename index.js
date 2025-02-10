@@ -1,4 +1,44 @@
-var lbs = prompt("Weight in lbs?");
-var kg = lbs*0.454;
-alert("This is: "+kg+" kilogram");
-console.log("Conversion Completed!");
+var restart = document.querySelector("#b");
+
+var squares = document.querySelectorAll('td');
+
+function clearBoard() {
+
+    for (var i = 0; i < squares.length; i++) {
+ 
+     squares[i].textContent = '';
+ 
+ 
+    } 
+ 
+ }
+
+
+restart.addEventListener('click',clearBoard);
+
+
+function changeMarker(){
+
+    if(this.textContent === '') {
+        this.textContent = 'X';
+
+    }
+
+    else if (this.textContent === 'X'){
+        this.textContent = 'O';
+    }
+
+    else{
+        this.textContent = '';
+    }
+}
+
+
+
+
+ for (var i = 0; i < squares.length; i++) {
+ 
+     squares[i].addEventListener('click',changeMarker)
+
+ 
+ }
